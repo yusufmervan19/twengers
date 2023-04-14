@@ -1,0 +1,27 @@
+<nav class="py-6 px-6 flex justify-between items-center bg-gray-100 border-b border-gray-200">
+    <a href="/" class="flex items-center text-xl font-semibold">
+        <img src="https://w7.pngwing.com/pngs/990/39/png-transparent-sneakers-computer-icons-clothing-clothing-logos-white-hand-fashion.png" alt="Twengers logo" class="h-12 mr-2">
+        TWENGERS
+    </a>
+        
+    <div class="space-x-6">
+        {% if request.user.is_authenticated %}
+        
+        <a href="{% url 'item:items' %}" class="text-lg- font-semibold hover:text-gray-500">Arama</a>
+        <a href="{% url 'conversation:inbox' %}" class="text-lg- font-semibold hover:text-gray-500">Mesaj Kutusu</a>
+        <a href="/items/new" class="px-6 py-3 font-semibold bg-blue-700 text-white rounded-xl hover:bg-blue-900">Yeni Ürün</a>
+        <a href="/dashboard/index" class="px-6 py-3 font-semibold bg-blue-700 text-white rounded-xl hover:bg-blue-900">Dashboard</a>
+        <a href="/user/logout" class="px-6 py-3 font-semibold bg-red-500 text-white rounded-xl hover:bg-red-700">Çıkış</a>
+        {% else %}
+        
+        <a href="{% url 'item:items' %}" class="text-lg- font-semibold hover:text-gray-500">Arama</a>
+        <a href="/user/register" class="px-6 py-3 font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Kayıt ol</a>
+        <a href="/user/login" class="px-6 py-3 font-semibold bg-gray-700 text-white rounded-xl hover:bg-gray-900">Giriş yap</a>
+
+        {% endif %}
+    </div>
+
+
+
+
+</nav>
